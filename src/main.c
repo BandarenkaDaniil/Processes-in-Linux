@@ -1,14 +1,3 @@
-/*
-4. Написать программу поиска заданной пользователем комбинации из m байт
-(m <255) во всех файлах заданного каталога. Главный процесс открывает каталог и
-запускает для каждого файла каталога отдельный процесс поиска заданной
-комбинации из m байт. Каждый процесс выводит на экран свой pid, полный путь к
-файлу, общее число просмотренных байт и результаты (сколько раз найдена
-комбинация) поиска (все в одной строке). Число одновременно работающих
-процессов не должно превышать N (вводится пользователем). Проверить работу
-программы для каталога /etc и строки «ifconfig».
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -30,12 +19,12 @@
 #define WRITE_BLOCK      4096
 #define TEMP_OUTPUT_FILE "/tmp/output"
 
-void print_error (const char*, const char*, const char*);
-bool is_dir (const char*);
-int read_dir_to_list (const char*, struct SLList*);
-int substr_in_str_count(const char*, const char*);
-int substr_in_file_count(const char*, const char*, int*);
-int print_file(const char*);
+void print_error          (const char*, const char*, const char*);
+bool is_dir               (const char*                          );
+int  read_dir_to_list     (const char*, struct SLList*          );
+int  substr_in_str_count  (const char*, const char*             );
+int  substr_in_file_count (const char*, const char*, int*       );
+int  print_file           (const char*                          );
 
 char *module_name;
 
