@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
   const char *source_dir     = argv[1];
   const char *found_sequence = argv[2];
-  const int   max_procceses  = atoi(argv[3]);
+  const int   max_processes  = atoi(argv[3]);
 
   if (curr_processes_running == MAP_FAILED)
   {
